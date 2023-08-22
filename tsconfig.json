@@ -1,0 +1,30 @@
+{
+  "compilerOptions": {
+    "target": "ES2022",
+    "lib": ["ES2022"],
+    "module": "node16",
+    "moduleResolution": "node16",
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "forceConsistentCasingInFileNames": true,
+    "rootDir": "./src",
+    "typeRoots": ["./src/types", "./node_modules/@types"],
+    "outDir": "dist",
+    "strict": true,
+    "allowJs": true,
+    "checkJs": false,
+    "skipLibCheck": true,
+    "declaration": true,
+    "declarationMap": true,
+    "sourceMap": true,
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
+    "preserveConstEnums": true,
+    "removeComments": false,
+    "noEmit": false, // TODO: true for React | ReactNative
+    "jsx": "preserve" // TODO: use 'react' | 'react-native' for React | ReactNative
+  },
+  "include": ["./src"]
+}
