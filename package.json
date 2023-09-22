@@ -36,7 +36,7 @@
   },
   "type": "commonjs",
   "engines": {
-    "node": "^18.16.0"
+    "node": ">=18.16.0"
   },
   "config": {
     "dir": {
@@ -62,10 +62,10 @@
     "pretest": "rm -rf $npm_package_config_dir_coverage",
     "test": "npm run test:all",
     "test:all": "npm run test:unit && npm run test:e2e",
-    "test:unit": "jest --no-cache .unit. --coverage",
-    "test:e2e": "jest --no-cache .e2e.",
-    "test:staged": "jest --no-cache --onlyChanged",
-    "test:watch": "jest --no-cache --watch"
+    "test:unit": "jest --no-cache --runInBand .unit. --coverage",
+    "test:e2e": "jest --no-cache --runInBand .e2e.",
+    "test:staged": "jest --no-cache --runInBand --onlyChanged",
+    "test:watch": "jest --no-cache --runInBand --watch"
   },
   "dependencies": {},
   "devDependencies": {
