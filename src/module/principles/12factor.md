@@ -6,13 +6,13 @@
 
 One codebase tracked in revision control, many deploys.
 
-The first factor, codebase, focuses on having a single codebase with multiple deploys or “one codebase tracked in revision control, many deploys.” To properly follow this principle, you should avoid multiple code bases for various versions. Adding branches to one codebase helps ensure that your codebase is made of a logical version control system. Your repository shouldn’t house multiple applications, as it can become confusing.
+The first factor, codebase, focuses on having a single codebase with multiple deploys or "one codebase tracked in revision control, many deploys". To properly follow this principle, you should avoid multiple code bases for various versions. Adding branches to one codebase helps ensure that your codebase is made of a logical version control system. Your repository shouldn’t house multiple applications, as it can become confusing.
 
 In short, this means you need to:
 
-- Have one codebase
-- Make a logical control system
-- Have a code repository for every deployment. This code repository should be able to be deployed in multiple environments
+- Have one codebase.
+- Make a logical control system.
+- Have a code repository for every deployment. This code repository should be able to be deployed in multiple environments.
 
 ## 2. Dependencies
 
@@ -22,8 +22,8 @@ The next principle is dependencies: explicitly declare and isolate dependencies.
 
 According to this principle, the 12-factor app must be:
 
-- Self-containing
-- Isolated to avoid interactions with any conflicting libraries
+- Self-containing.
+- Isolated to avoid interactions with any conflicting libraries.
 
 ## 3. Config
 
@@ -66,7 +66,7 @@ In addition, each release needs a unique ID.
 
 Execute the app as one or more stateless processes.
 
-Processes, the next principle, “execute the app as one or more stateless processes.” In short, this means that you don’t have to rely on any state being present in the memory on the file system because it’s stateless. All required data should be stored in a stateful backing service, such as a database.
+In short, this means that you don’t have to rely on any state being present in the memory on the file system because it’s stateless. All required data should be stored in a stateful backing service, such as a database.
 
 ## 7. Port binding
 
@@ -78,34 +78,28 @@ Port binding, the seventh principle, is essentially about the app being standalo
 
 Scale out via the process model.
 
-The next principle, concurrency, states that you should “scale out via the process model.” Essentially, this means that you need to build the application so that scaling them in the cloud is simple. By developing the application to be concurrent, new instances can easily be spun into the cloud.
+Essentially, this means that you need to build the application so that scaling them in the cloud is simple. By developing the application to be concurrent, new instances can easily be spun into the cloud.
 
 ## 9. Disposability
 
 Maximize robustness with fast startup and graceful shutdown.
 
-In this principle, disposability means that you should “maximize robustness with fast startup and graceful shutdown.” By following this principle, you’re building a more durable application.
-
-According to this principle, your app should be able to die at any time, without impacting the user. Apps designed in this way can shut down smoothly and come back up again quickly. This ensures that your users won’t be affected.
+By following this principle, you’re building a more durable application. According to this principle, your app should be able to die at any time, without impacting the user. Apps designed in this way can shut down smoothly and come back up again quickly. This ensures that your users won’t be affected.
 
 ## 10. Dev/prod parity
 
 Keep development, staging, and production as similar as possible.
 
-According to the dev/prod parity principle, the development environment should be nearly identical to the production environment. It’s stated that developers should “keep development, staging, and production as similar as possible.” Twelve-factor apps should have identical development and production code.
-
-Vast differences between the environments could result in compatibility issues between the dev and prod code. Down the line, this could result in significant issues that are potentially time consuming and a waste of resources. By following this principle, teams avoid the “it works on my machine” conundrum.
+According to the dev/prod parity principle, the development environment should be nearly identical to the production environment. Vast differences between the environments could result in compatibility issues between the dev and prod code. Down the line, this could result in significant issues that are potentially time consuming and a waste of resources. By following this principle, teams avoid the "it works on my machine" conundrum.
 
 ## 11. Logs
 
 Treat logs as event streams.
 
-The 11th principle, logs, states that you should “treat logs as event streams.” This means that developers should stream logs to a specific location. Unlike traditional models, the 12-factor app methodology avoids dumping logs into a log file.
-
-By treating logs as event streams, development teams avoid common issues that other developers face. When new processes start or when an app crashes, logs will be allocated across different cloud machines. By following this principle, developers avoid this issue and have a common place for the logs to stream.
+This means that developers should stream logs to a specific location. Unlike traditional models, the 12-factor app methodology avoids dumping logs into a log file. By treating logs as event streams, development teams avoid common issues that other developers face. When new processes start or when an app crashes, logs will be allocated across different cloud machines. By following this principle, developers avoid this issue and have a common place for the logs to stream.
 
 ## 12. Admin processes
 
 Run admin/management tasks as one-off processes.
 
-The final principle, admin processes, requires that administrative tasks be separated from the rest of the application. Even when administration processes are separate, tasks should run in the same environment, against the base code and configuration of the app. Ultimately, by running admin and management tasks in this way, you’re preventing any drift from one another.
+Even when administration processes are separate, tasks should run in the same environment, against the base code and configuration of the app. Ultimately, by running admin and management tasks in this way, you’re preventing any drift from one another.
