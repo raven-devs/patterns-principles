@@ -1,4 +1,4 @@
-# Dependency inversion / Inversion of control (IoC)
+# Inversion of Control (IoC) / Dependency Inversion
 
 The dependency inversion principle is a design principle that states that high-level modules should depend on abstractions (interfaces / abstract classes) rather than concrete implementations (classes). This helps decouple the high-level and low-level modules, making it easier to change the low-level ones without affecting the high-level ones.
 

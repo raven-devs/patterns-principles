@@ -1,4 +1,4 @@
-# Low coupling and high cohesion
+# Low Coupling and High Cohesion
 
 Cohesion refers to the degree to which the elements of a module/class belong together, it is suggested that the related code should be close to each other, so we should strive for high cohesion and bind all related code together as close as possible. It has to do with the elements within the module/class.
 

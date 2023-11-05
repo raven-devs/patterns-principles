@@ -1,4 +1,4 @@
-# Explicit dependencies
+# Explicit Dependencies
 
 Methods and classes should explicitly require (typically through method parameters or constructor parameters) any collaborating objects they need in order to function correctly.
 

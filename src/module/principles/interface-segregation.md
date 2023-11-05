@@ -1,4 +1,4 @@
-# Interface segregation
+# Interface Segregation
 
 The Interface Segregation Principle (ISP) states that clients should not be forced to depend on methods that they do not use. Interfaces should belong to clients, not to libraries or hierarchies. Application developers should favor thin, focused interfaces to "fat" interfaces that offer more functionality than a particular class or method needs.
 
