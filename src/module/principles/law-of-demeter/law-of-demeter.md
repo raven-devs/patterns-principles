@@ -30,3 +30,5 @@ Its basic premise is you should only hand over (and on the other side, only ask 
 ```js
 Transaction.Customer.FormOfPayment.CreditCardNumber.ProcessCreditCard();
 ```
+
+Although the Law of Demeter has a mathematical formulation, in simple terms it advises an object to only interact with its immediate friends and not with "a friend of a friend".

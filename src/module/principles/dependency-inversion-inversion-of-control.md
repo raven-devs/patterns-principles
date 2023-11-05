@@ -1,4 +1,4 @@
-# Dependency inversion
+# Dependency inversion / Inversion of control (IoC)
 
 The dependency inversion principle is a design principle that states that high-level modules should depend on abstractions (interfaces / abstract classes) rather than concrete implementations (classes). This helps decouple the high-level and low-level modules, making it easier to change the low-level ones without affecting the high-level ones.
 
@@ -10,6 +10,8 @@ The dependency inversion principle helps us couple software modules loosely. The
 By following the dependency inversion principle, you can design your application so that the high-level modules depend on abstractions rather than concrete implementations of the low-level modules.
 
 This can make your code more flexible and easier to maintain because it reduces the coupling between components and allows you to easily change the implementation of the low-level modules without affecting the high-level modules.
+
+In general terms, Inversion of Control (IoC) is about inverting the traditional control flow in an application. Instead of letting its components create and manage their own dependencies (in the form of other components of the app, e.g. particular services), we delegate this responsibility to an external entity, e.g. an IoC container or framework – depending on the specific implementation.
 
 ```typescript
 // High-level module

@@ -1,4 +1,4 @@
-# Dependency injection
+# Dependency injection (DI)
 
 Dependency injection is a technique that allows us to decouple high-level modules from low-level modules by providing an abstraction for the low-level modules.
 
