@@ -1,12 +1,28 @@
 # SOLID
 
-## Single-responsibility principle
+## Single Responsibility
+
+The Single Responsibility Principle (SRP) states that a class should have only one reason to change.
+
+The Single Responsibility Principle is closely related to the concepts of coupling and cohesion. Coupling refers to how inextricably linked different aspects of an application are, while cohesion refers to how closely related the contents of a particular class or package may be. All of the contents of a single class are tightly coupled together, since the class itself is a single unit that must either be entirely used or not at all (discounting static methods and data for the moment). When other classes make use of a particular class, and that class changes, the depending classes must be tested to ensure they continue to function correctly with the new behavior of the class. If a class has poor cohesion, some part of it may change that only certain depending classes utilize, while the rest of it may remain unchanged. Nonetheless, classes that depend on the class must all be retested as a result of the change, increasing the total surface area of the application that is affected by the change. If instead the class were broken up into several, highly cohesive classes, each would be used by fewer other elements of the system, and so a change to any one of them would have a lesser impact on the total system.
+
+Some examples of responsibilities to consider that may need to be separated include:
+
+- Persistence
+- Validation
+- Notification
+- Error Handling
+- Logging
+- Class Selection / Instantiation
+- Formatting
+- Parsing
+- Mapping
 
 Define interfaces / classes that take care of one thing only.
 
 The dependency inversion principle helps to adhere to the single-responsibility principle by allowing you to separate concerns into different modules. For example, the high-level module can provide a more abstract interface, while the low-level module can focus on implementing the details.
 
-## Open-closed principle
+## Open-Closed
 
 The Open-Closed Principle (OCP) states that software entities (classes, modules, methods, etc.) should be open for extension, but closed for modification.
 
@@ -18,7 +34,7 @@ Since we are relying on abstractions, we don’t have to make changes on our cal
 
 The dependency inversion principle can help you design your code in a way that is open for extension but closed for modification. By depending on abstractions rather than concrete implementations, you can more easily extend the functionality of your code without modifying existing code.
 
-## Liskov substitution principle
+## Liskov Substitution
 
 The Liskov Substitution Principle (LSP) states that subtypes must be substitutable for their base types. When this principle is violated, it tends to result in a lot of extra conditional logic scattered throughout the application, checking to see the specific type of an object. This duplicate, scattered code becomes a breeding ground for bugs as the application grows.
 
@@ -32,14 +48,58 @@ We can replace any of our objects by another one as long as they implement the s
 
 The dependency inversion principle can help you adhere to the Liskov substitution principle by allowing you to substitute different implementations of a module without affecting the high-level module.
 
-## Interface segregation principle
+## Interface Segregation
+
+The Interface Segregation Principle (ISP) states that clients should not be forced to depend on methods that they do not use. Interfaces should belong to clients, not to libraries or hierarchies. Application developers should favor thin, focused interfaces to "fat" interfaces that offer more functionality than a particular class or method needs.
+
+Consider an interface like this one:
+
+```typescript
+interface Membership {
+  login(username: string, password: string): boolean;
+  logout(username: string): void;
+  register(username: string, password: string, email: string): string;
+  forgotPassword(username: string): void;
+}
+```
+
+It's easy to imagine such an interface growing completely out of control and having more functionality than any one class would ever require. To keep, say, a login form from having more methods on it than it needs, you could create a login-specific interface, and have the existing interface extend from it:
+
+```typescript
+interface Login {
+  login(username: string, password: string): boolean;
+  logout(username: string): void;
+}
+
+interface Membership extends Login {
+  register(username: string, password: string, email: string): string;
+  forgotPassword(username: string): void;
+}
+```
+
+Ideally, your thin interfaces should be cohesive, meaning they have groups of operations that logically belong together. This will prevent you from ending up with one-interface-per-method most of the time in real-world systems (as opposed to the above trivial example).
 
 Create a custom interface that extends a base interface, and we’re using that one to bind our implementation. That way, we keep our base interface clean and we can add custom methods on our custom interfaces.
 
 The dependency inversion principle promotes the use of small, specific interfaces that only expose the methods that are needed by the high-level module. This can help you adhere to the interface segregation principle by not forcing the high-level module to depend on unnecessary methods.
 
-## Dependency inversion principle
+## Dependency Inversion
+
+The Dependency Inversion Principle (DIP) states that high level modules should not depend on low level modules, both should depend on abstractions. Abstractions should not depend on details. Details should depend upon abstractions.
+
+The dependency inversion principle is a design principle that states that high-level modules should depend on abstractions (interfaces / abstract classes) rather than concrete implementations (classes). This helps decouple the high-level and low-level modules, making it easier to change the low-level ones without affecting the high-level ones.
+
+The dependency inversion principle helps us couple software modules loosely. The principle was developed after many years of coupling software modules, and it states:
+
+- High-level modules should not import anything from low-level modules, they should both depend on abstractions.
+- Abstractions should not rely on concrete implementations, concrete implementations should depend on abstractions.
+
+By following the dependency inversion principle, you can design your application so that the high-level modules depend on abstractions rather than concrete implementations of the low-level modules.
+
+This can make your code more flexible and easier to maintain because it reduces the coupling between components and allows you to easily change the implementation of the low-level modules without affecting the high-level modules.
 
 We’re relying on interfaces everywhere.
 
 The dependency inversion principle helps you design more maintainable and scalable software by promoting loose coupling between components and adhering to the SOLID principles.
+
+In other words, this principle advocates the use of interfaces or abstract classes to define a higher-level module's interaction with lower-level modules. By doing this, you can decouple the implementation details of the higher-level modules from the lower-level modules, making the code more modular, flexible, and easier to maintain.
