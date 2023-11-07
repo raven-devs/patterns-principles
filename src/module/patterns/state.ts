@@ -7,44 +7,18 @@
 type StateValue = 'state1' | 'state2' | 'state3' | 'state4' | 'state5';
 
 // Interface representing a state
-abstract class State {
-  constructor(private _value: StateValue) {}
+class State {
+  constructor(
+    private _value: StateValue,
+    private _transitions: StateValue[],
+  ) {}
 
   get value(): StateValue {
     return this._value;
   }
 
-  abstract getTransitions(): StateValue[];
-}
-
-// Concrete states
-class State1 extends State {
-  getTransitions(): StateValue[] {
-    return ['state2', 'state3'];
-  }
-}
-
-class State2 extends State {
-  getTransitions(): StateValue[] {
-    return ['state4'];
-  }
-}
-
-class State3 extends State {
-  getTransitions(): StateValue[] {
-    return ['state1', 'state4'];
-  }
-}
-
-class State4 extends State {
-  getTransitions(): StateValue[] {
-    return ['state1', 'state5'];
-  }
-}
-
-class State5 extends State {
-  getTransitions(): StateValue[] {
-    return [];
+  get transitions(): StateValue[] {
+    return this._transitions;
   }
 }
 
@@ -61,7 +35,7 @@ class StateMachine {
   }
 
   transit(nextState: State): StateMachine {
-    const transitions = this._state.getTransitions();
+    const transitions = this._state.transitions;
     const nextStateValue = nextState.value;
 
     if (!transitions.includes(nextStateValue)) {
@@ -76,11 +50,11 @@ class StateMachine {
 }
 
 function main() {
-  const state1 = new State1('state1');
-  const state2 = new State2('state2');
-  const state3 = new State3('state3');
-  const state4 = new State4('state4');
-  const state5 = new State5('state5');
+  const state1 = new State('state1', ['state2', 'state3']);
+  const state2 = new State('state2', ['state4']);
+  const state3 = new State('state3', ['state1', 'state4']);
+  const state4 = new State('state4', ['state1', 'state5']);
+  const state5 = new State('state5', []);
 
   const stateMachine = new StateMachine(state1);
 
