@@ -16,7 +16,7 @@ DAO (Data Access Object) and DTO (Data Transfer Object) are both design patterns
 
 In summary, while both DAO and DTO are design patterns used in software development, DAO is primarily concerned with providing an abstract interface to a database or persistence mechanism, while DTO is concerned with transferring data between different subsystems or layers of an application. They serve different purposes and are used in different parts of the application architecture.
 
-You can implement the Data Access Object (DAO) design pattern to abstract and encapsulate the data access logic for your application. The DAO pattern helps to isolate the application/business layer from the persistence layer (like a database). Here's a simple example of a DAO implementation:
+You can implement the Data Access Object (DAO) design pattern to abstract and encapsulate the data access logic for your application. The DAO pattern helps to isolate the application/business layer from the persistence layer (like a database).
 
 ```typescript
 // Entity

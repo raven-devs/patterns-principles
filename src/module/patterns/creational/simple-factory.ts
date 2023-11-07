@@ -1,8 +1,7 @@
-# Simple Factory
+/**
+ * A Simple Factory is a creational design pattern that provides a centralized method for creating objects. It is not a formal design pattern but rather a programming idiom.
+ */
 
-A Simple Factory is a creational design pattern that provides a centralized method for creating objects. It is not a formal design pattern but rather a programming idiom. Here's a simple example of a Simple Factory in TypeScript:
-
-```typescript
 // Product interface
 interface Product {
   operation(): string;
@@ -38,8 +37,7 @@ class SimpleFactory {
 const factory = new SimpleFactory();
 
 const productA = factory.createProduct('A');
-console.log(productA.operation()); // Output: ConcreteProductA
+console.log(productA.operation());
 
 const productB = factory.createProduct('B');
-console.log(productB.operation()); // Output: ConcreteProductB
-```
+console.log(productB.operation());

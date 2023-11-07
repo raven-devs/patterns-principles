@@ -1,13 +1,18 @@
-# Dependency Injection (DI)
-
-Dependency injection is a technique that allows us to decouple high-level modules from low-level modules by providing an abstraction for the low-level modules.
+/**
+ * Dependency Injection (DI) is a technique that allows us to decouple high-level modules from low-level modules by providing an abstraction for the low-level modules.
 
 Dependency injection is a technique for achieving dependency inversion. In dependency injection, a class or module receives its dependencies as arguments to its constructor or functions rather than creating them themselves. This allows the dependencies to be replaced with mock implementations during testing and makes it easier to change them at runtime.
 
 - Using a constructor method.
 - Using a setter method.
+ */
 
-```typescript
+interface PaymentProcessor {
+  processPayment(cart: Cart): void;
+}
+
+interface Cart {}
+
 class ShoppingCartService {
   private paymentProcessor: PaymentProcessor;
 
@@ -21,11 +26,9 @@ class ShoppingCartService {
     this.paymentProcessor.processPayment(cart);
   }
 }
-```
 
-```typescript
-class ShoppingCartService {
-  private paymentProcessor: PaymentProcessor;
+class ShoppingCartService2 {
+  private paymentProcessor: PaymentProcessor | null = null;
 
   // injecting using a setter method
   setPaymentProcessor(paymentProcessor: PaymentProcessor) {
@@ -34,7 +37,6 @@ class ShoppingCartService {
 
   public checkout(cart: Cart) {
     // do some logic
-    this.paymentProcessor.processPayment(cart);
+    this.paymentProcessor?.processPayment(cart);
   }
 }
-```

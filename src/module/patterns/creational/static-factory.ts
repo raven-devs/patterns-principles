@@ -1,8 +1,7 @@
-# Static Factory
+/**
+ * You can implement the Static Factory pattern by defining a static method within a class to create instances of that class.
+ */
 
-You can implement the Static Factory pattern by defining a static method within a class to create instances of that class. Here's an example of the Static Factory Pattern:
-
-```typescript
 class Product {
   private name: string;
 
@@ -29,4 +28,3 @@ console.log(productA.getName()); // Output: Product A
 
 const productB = Product.createProductB();
 console.log(productB.getName()); // Output: Product B
-```

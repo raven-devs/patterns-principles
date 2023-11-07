@@ -1,6 +1,6 @@
 # Persistence Ignorance
 
-Persistence Ignorance is a principle in software development that suggests that domain objects should not be responsible for their own persistence mechanism. This allows for better separation of concerns, making the code more maintainable and flexible. In TypeScript, violations of Persistence Ignorance can occur when domain objects have direct knowledge or dependencies on the persistence layer. Here's an example:
+Persistence Ignorance is a principle in software development that suggests that domain objects should not be responsible for their own persistence mechanism. This allows for better separation of concerns, making the code more maintainable and flexible. In TypeScript, violations of Persistence Ignorance can occur when domain objects have direct knowledge or dependencies on the persistence layer.
 
 ```typescript
 // Domain object
@@ -28,7 +28,7 @@ user.saveToDatabase();
 
 In the above example, the User class is responsible for its own persistence logic through the saveToDatabase method. This violates the Persistence Ignorance principle because the domain object should not be directly responsible for saving itself to the database. Instead, this responsibility should lie within a separate persistence layer, such as a data access object (DAO) or repository.
 
-To adhere to the Persistence Ignorance principle, you could separate the persistence logic from the User class, as shown in the following modified example:
+To adhere to the Persistence Ignorance principle, you could separate the persistence logic from the User class.
 
 ```typescript
 // Adhering to Persistence Ignorance

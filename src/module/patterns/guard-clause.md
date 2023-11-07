@@ -15,13 +15,13 @@ function subscribe(user: User, subscription: Subscription, term: Term) {
       } else if (term == Term.Monthly) {
         // subscribe monthly
       } else {
-        throw new InvalidEnumArgumentException(nameof(term));
+        throw new InvalidEnumArgumentException('term');
       }
     } else {
-      throw new ArgumentNullException(nameof(subscription));
+      throw new ArgumentNullException('subscription');
     }
   } else {
-    throw new ArgumentNullException(nameof(user));
+    throw new ArgumentNullException('user');
   }
 }
 ```
@@ -31,17 +31,17 @@ This code can be refactored to eliminate the need for the else clauses. This is 
 ```typescript
 function Subscribe2(user: User, subscription: Subscription, term: Term) {
   if (user == null) {
-    throw new ArgumentNullException(nameof(user));
+    throw new ArgumentNullException('user');
   }
   if (subscription == null) {
-    throw new ArgumentNullException(nameof(subscription));
+    throw new ArgumentNullException('subscription');
   }
   if (term == Term.Annually) {
     // subscribe annually
   } else if (term == Term.Monthly) {
     // subscribe monthly
   } else {
-    throw new InvalidEnumArgumentException(nameof(term));
+    throw new InvalidEnumArgumentException('term');
   }
 }
 ```
