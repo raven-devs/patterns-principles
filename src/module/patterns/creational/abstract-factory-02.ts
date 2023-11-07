@@ -1,10 +1,4 @@
-// npx ts-node src/module/patterns/creational/abstract-factory.ts
-
-/**
- * The Abstract Factory pattern provides an interface for creating families of related or dependent objects without
- * specifying their concrete types. This pattern allows the client to use abstract classes instead of concrete classes
- * to create families of objects.
- */
+// npx ts-node src/module/patterns/creational/abstract-factory-02.ts
 
 interface Database {
   connect(): void;
@@ -38,14 +32,14 @@ class NoSqlDatabaseFactory implements DatabaseFactory {
   }
 }
 
-function main() {
-  const databaseFactory: DatabaseFactory = new SqlDatabaseFactory();
+function clientCode(databaseFactory: DatabaseFactory) {
   const database: Database = databaseFactory.createDatabase();
   database.connect();
+}
 
-  const databaseFactory2: DatabaseFactory = new NoSqlDatabaseFactory();
-  const database2: Database = databaseFactory2.createDatabase();
-  database2.connect();
+function main() {
+  clientCode(new SqlDatabaseFactory());
+  clientCode(new NoSqlDatabaseFactory());
 }
 
 main();

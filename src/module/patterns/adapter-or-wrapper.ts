@@ -58,7 +58,7 @@ class PushNotification {
 
 // the adapter / wrapper over incompatible notification interfaces
 interface NotificationAdapter {
-  notify(user: User, message: Message): void;
+  send(user: User, message: Message): void;
 }
 
 // Given this adapter interface, specific implementations can be written to support each messaging interface:
@@ -66,7 +66,7 @@ interface NotificationAdapter {
 class EmailNotificationAdapter implements NotificationAdapter {
   constructor(private readonly sender: EmailNotification) {}
 
-  notify(user: User, message: Message): void {
+  send(user: User, message: Message): void {
     if (!user.allowEmailNotifications) {
       return;
     }
@@ -78,7 +78,7 @@ class EmailNotificationAdapter implements NotificationAdapter {
 class SmsNotificationAdapter implements NotificationAdapter {
   constructor(private readonly sender: SmsNotification) {}
 
-  notify(user: User, message: Message): void {
+  send(user: User, message: Message): void {
     if (!user.allowEmailNotifications) {
       return;
     }
@@ -90,7 +90,7 @@ class SmsNotificationAdapter implements NotificationAdapter {
 class PushNotificationAdapter implements NotificationAdapter {
   constructor(private readonly sender: PushNotification) {}
 
-  notify(user: User, message: Message): void {
+  send(user: User, message: Message): void {
     if (!user.allowEmailNotifications) {
       return;
     }
@@ -103,11 +103,11 @@ function main() {
   const user = new User('Jack London', 'jack.london@company.com', '+493455689', true);
   const message = new Message('title', 'some notification...');
 
-  let notification: NotificationAdapter = new SmsNotificationAdapter(new SmsNotification());
-  notification.notify(user, message);
+  const smsNotification: NotificationAdapter = new SmsNotificationAdapter(new SmsNotification());
+  smsNotification.send(user, message);
 
-  notification = new PushNotificationAdapter(new PushNotification());
-  notification.notify(user, message);
+  const pushNotification = new PushNotificationAdapter(new PushNotification());
+  pushNotification.send(user, message);
 }
 
 main();
