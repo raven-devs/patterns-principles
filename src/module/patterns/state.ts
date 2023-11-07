@@ -60,20 +60,6 @@ class StateMachine {
     return this._state.value;
   }
 
-  next(nextState: State): StateMachine {
-    const transitions = this._state.getTransitions();
-    const nextStateValue = nextState.value;
-
-    if (transitions.length === 0) {
-      const stateValue = this._state.value;
-      throw new Error(`Unable to transit from ${stateValue} to any state.`);
-    }
-
-    this._state = nextState;
-
-    return this;
-  }
-
   transit(nextState: State): StateMachine {
     const transitions = this._state.getTransitions();
     const nextStateValue = nextState.value;
