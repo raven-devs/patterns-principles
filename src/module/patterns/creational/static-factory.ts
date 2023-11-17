@@ -28,3 +28,5 @@ console.log(productA.getName()); // Output: Product A
 
 const productB = Product.createProductB();
 console.log(productB.getName()); // Output: Product B
+
+export {};

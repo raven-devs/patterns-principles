@@ -41,3 +41,5 @@ console.log(productA.operation());
 
 const productB = factory.createProduct('B');
 console.log(productB.operation());
+
+export {};

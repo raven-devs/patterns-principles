@@ -1,4 +1,4 @@
-// npx ts-node src/module/patterns/creational/builder.ts
+// npx ts-node src/module/patterns/creational/builder-01.ts
 
 /**
  * The Builder design pattern is a creational pattern, similar to the Factory pattern (Factory Method, Abstract
