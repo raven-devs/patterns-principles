@@ -1,4 +1,4 @@
-// npx ts-node src/module/patterns/creational/factory-method.ts
+// npx ts-node src/module/patterns/creational/factory-method-01.ts
 
 /**
  * The Factory Method pattern is an object creation pattern. It enables us to define an interface or abstract class for
@@ -11,23 +11,16 @@
  * whereas Template Method is behavioral (it computes something).
  *
  * Note is that the Creator (parent VehicleOperator) class invokes its own factoryMethod (getVehicle()). If we remove
- * forward() from the parent class, leaving only a single method behind, it is no longer the Factory Method pattern. In
- * other words, Factory Method cannot be implemented with less than two methods in the parent class; and one must invoke
- * the other.
+ * sendDriveCommand() from the parent class, leaving only a single method behind, it is no longer the Factory Method pattern. In other words, Factory Method cannot be implemented with less than two methods in the parent class; and one must invoke the other.
  */
 
 interface Vehicle {
   drive(): void;
-  stop(): void;
 }
 
 class Car implements Vehicle {
   drive() {
     console.log('Car is driving...');
-  }
-
-  stop(): void {
-    console.log('Car stopped');
   }
 }
 
@@ -35,15 +28,11 @@ class Bike implements Vehicle {
   drive() {
     console.log('Bike is driving...');
   }
-
-  stop(): void {
-    console.log('Bike stopped');
-  }
 }
 
-abstract class VehicleOperator {
-  forward() {
-    const vehicle = this.getVehicle(); // invoke a factory method
+abstract class VehicleRemoteOperator {
+  sendDriveCommand() {
+    const vehicle = this.getVehicle(); // invokes a factory method
     vehicle.drive();
   }
 
@@ -51,15 +40,32 @@ abstract class VehicleOperator {
 }
 
 // implement a factory method in a subclass
-class BikeOperator extends VehicleOperator {
+class BikeRemoteOperator extends VehicleRemoteOperator {
   protected override getVehicle(): Vehicle {
     return new Bike();
   }
 }
 
+class CarRemoteOperator extends VehicleRemoteOperator {
+  protected override getVehicle(): Vehicle {
+    return new Car();
+  }
+}
+
+class Client {
+  constructor(private vehicleRemoteOperator: VehicleRemoteOperator) {}
+
+  main() {
+    this.vehicleRemoteOperator.sendDriveCommand();
+  }
+}
+
 function main() {
-  const vehicleOperator: VehicleOperator = new BikeOperator();
-  vehicleOperator.forward();
+  const client1 = new Client(new BikeRemoteOperator());
+  client1.main();
+
+  const client2 = new Client(new CarRemoteOperator());
+  client2.main();
 }
 
 main();
