@@ -1,4 +1,4 @@
-# How do the Proxy, Decorator, Adapter, and Bridge Patterns differ
+# Proxy vs Decorator vs Adapter vs Bridge
 
 Proxy, Decorator, Adapter, and Bridge are all variations on "wrapping" a class. But their uses are different.
 
