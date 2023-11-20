@@ -24,7 +24,8 @@
     "preserveConstEnums": true,
     "removeComments": false,
     "noEmit": false, // TODO: true for React | ReactNative
-    "jsx": "preserve" // TODO: use 'react' | 'react-native' for React | ReactNative
+    "jsx": "preserve", // TODO: use 'react' | 'react-native' for React | ReactNative
+    "strictPropertyInitialization": false
   },
   "include": ["./src"]
 }

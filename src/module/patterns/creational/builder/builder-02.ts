@@ -155,14 +155,14 @@ class Director {
   // alter the final type of the newly assembled product.
   // The director can construct several product variations
   // using the same building steps.
-  constructSportsCar(builder: Builder) {
+  buildSportsCar(builder: Builder) {
     builder.setSeats(2);
     builder.setEngine(new SportEngine());
     builder.setTripComputer(true);
     builder.setGPS(true);
   }
 
-  constructSUV(builder: Builder) {
+  buildSUV(builder: Builder) {
     //
   }
 }
@@ -174,13 +174,13 @@ class Application {
   makeCar() {
     const director = new Director();
 
-    const carBuilder: CarBuilder = new CarBuilder();
-    director.constructSportsCar(carBuilder);
+    const carBuilder = new CarBuilder();
+    director.buildSportsCar(carBuilder);
     const car: Car | null = carBuilder.getProduct();
     console.log('A car had been built', car);
 
     const manualBuilder: CarManualBuilder = new CarManualBuilder();
-    director.constructSportsCar(manualBuilder);
+    director.buildSportsCar(manualBuilder);
 
     // The final product is often retrieved from a builder
     // object since the director isn't aware of and not

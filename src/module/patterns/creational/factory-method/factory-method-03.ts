@@ -1,5 +1,3 @@
-// npx ts-node src/module/patterns/creational/factory-method-03.ts
-
 // This interface only has a method build(). This method is used to build a specific motor vehicle
 interface MotorVehicle {
   build(): void;

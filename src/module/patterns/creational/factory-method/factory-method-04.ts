@@ -1,5 +1,3 @@
-// npx ts-node src/module/patterns/creational/factory-method-04.ts
-
 // The product interface declares the operations that all
 // concrete products must implement.
 interface Button {

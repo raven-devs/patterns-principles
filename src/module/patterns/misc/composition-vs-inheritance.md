@@ -1,4 +1,4 @@
-# Inheritance vs Composition
+# Composition vs Inheritance
 
 ## Inheritance
 

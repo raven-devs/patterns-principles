@@ -1,5 +1,3 @@
-// npx ts-node src/module/patterns/creational/factory-method-01.ts
-
 /**
  * The Factory Method pattern is an object creation pattern. It enables us to define an interface or abstract class for
  * creating an object, leaving the specific details to the implementations. The Factory Method pattern allows for loose

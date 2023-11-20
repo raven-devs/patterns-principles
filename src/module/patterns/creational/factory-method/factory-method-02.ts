@@ -1,5 +1,3 @@
-// npx ts-node src/module/patterns/creational/factory-method-02.ts
-
 /**
  * Factory Method Design Pattern
  *

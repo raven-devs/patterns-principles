@@ -1,5 +1,3 @@
-// npx ts-node src/module/patterns/creational/abstract-factory-02.ts
-
 /**
  * Abstract Factory is a creational design pattern that lets you produce families of related objects without specifying their concrete classes.
  *
