@@ -1,5 +1,5 @@
 /**
- * Adapter Design Pattern
+ * Adapter Design Pattern (Also known as: Wrapper)
  *
  * Intent: Provides a unified interface that allows objects with incompatible
  * interfaces to collaborate.

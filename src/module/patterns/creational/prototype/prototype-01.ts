@@ -1,5 +1,5 @@
 /**
- * Prototype Design Pattern
+ * Prototype Design Pattern (Also known as: Clone)
  *
  * Intent: Lets you copy existing objects without making your code dependent on
  * their classes.
