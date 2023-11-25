@@ -59,7 +59,7 @@ class Light {
   }
 }
 
-// Invoker
+// Invoker (sender)
 class RemoteControl {
   private command: Command | null = null;
 

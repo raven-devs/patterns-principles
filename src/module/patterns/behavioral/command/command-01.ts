@@ -1,4 +1,6 @@
 /**
+ * Command Design Pattern (Also known as: Transaction)
+ *
  * Command is a behavioral design pattern that turns a request into a stand-alone object that contains all information about the request. This transformation lets you pass requests as a method arguments, delay or queue a request’s execution, and support undoable operations.
  *
  * The Command interface declares a method for executing a command.
