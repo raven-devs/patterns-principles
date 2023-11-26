@@ -103,6 +103,9 @@ function main() {
   const user = new User('Jack London', 'jack.london@company.com', '+493455689', true);
   const message = new Message('title', 'some notification...');
 
+  const emailNotification: NotificationAdapter = new EmailNotificationAdapter(new EmailNotification());
+  emailNotification.send(user, message);
+
   const smsNotification: NotificationAdapter = new SmsNotificationAdapter(new SmsNotification());
   smsNotification.send(user, message);
 
