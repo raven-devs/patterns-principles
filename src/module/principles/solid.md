@@ -371,7 +371,7 @@ performWork(robot); // Output: Robot is working
 
 ## Dependency Inversion
 
-The Dependency Inversion Principle (DIP) states that high level modules should not depend on low level modules, both should depend on abstractions. Abstractions should not depend on details. Details should depend upon abstractions.
+The Dependency Inversion Principle (DIP) states that high level modules should not depend on low level modules, both should depend on abstractions. Abstractions should not depend on details. Details should depend upon abstractions. Depend upon abstractions, not concretes.
 
 The dependency inversion principle is a design principle that states that high-level modules should depend on abstractions (interfaces / abstract classes) rather than concrete implementations (classes). This helps decouple the high-level and low-level modules, making it easier to change the low-level ones without affecting the high-level ones.
 

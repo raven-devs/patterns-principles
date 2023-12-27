@@ -1,38 +1,34 @@
-/**
- * The Singleton design pattern is used to ensure an application never contains more than a single instance of a given type.
- */
+// npx ts-node src/module/patterns/creational/singleton/singleton-02.ts
 
-class Singleton {
-  private static instance: Singleton;
-  private data: number;
+class Logger {
+  private static instance: Logger;
 
-  private constructor() {
-    // Initialize the singleton instance
-    this.data = 0;
-  }
+  private constructor() {}
 
-  public static getInstance(): Singleton {
-    if (!Singleton.instance) {
-      Singleton.instance = new Singleton();
+  public static getInstance(): Logger {
+    if (!Logger.instance) {
+      Logger.instance = new Logger();
     }
-    return Singleton.instance;
+
+    return Logger.instance;
   }
 
-  public setData(data: number): void {
-    this.data = data;
-  }
-
-  public getData(): number {
-    return this.data;
+  public log(message: string) {
+    const date = new Date();
+    console.log(`[${date.toLocaleString()}]: ${message}`);
   }
 }
 
-// Example usage of the Singleton class
-const singletonInstance1 = Singleton.getInstance();
-singletonInstance1.setData(42);
-console.log(singletonInstance1.getData()); // Output: 42
+function main() {
+  // somewhere in the app
+  const logger1 = Logger.getInstance();
+  logger1.log('Hi there!');
 
-const singletonInstance2 = Singleton.getInstance();
-console.log(singletonInstance2.getData()); // Output: 42
+  // somewhere in other part of the app
+  const logger2 = Logger.getInstance();
+  logger2.log('Wow!');
+}
+
+main();
 
 export {};
