@@ -10,6 +10,7 @@ DAO (Data Access Object) and DTO (Data Transfer Object) are both design patterns
    - DAOs typically contain methods for CRUD (Create, Read, Update, Delete) operations on the database or persistence storage.
 
 2. Data Transfer Object (DTO):
+
    - DTO is a design pattern used to transfer data between software application subsystems or layers, especially between the data access layer and the presentation layer.
    - It is essentially a plain Java or C# object that should only contain attributes and getters/setters for accessing the attributes.
    - DTOs are used to pass data between different layers of an application, and they help to reduce the number of method calls between the client and the server.

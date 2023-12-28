@@ -4,7 +4,7 @@ Encapsulating boundary conditions involves handling edge cases and boundary scen
 
 ```typescript
 // Encapsulation of boundary conditions
-class BoundaryHandler {
+class Boundary {
     static ensureNonNegative(input: number): number {
         if (input < 0) {
             return 0;
@@ -31,10 +31,10 @@ class BoundaryHandler {
 
 // Example usage of the encapsulated boundary conditions
 let value1 = -5;
-value1 = BoundaryHandler.ensureNonNegative(value1);
+value1 = Boundary.ensureNonNegative(value1);
 console.log(value1); // Output: 0
 
 let value2 = 15;
-value2 = BoundaryHandler.ensureInRange(value2, 0,
+value2 = Boundary.ensureInRange(value2, 0,
 
 ```

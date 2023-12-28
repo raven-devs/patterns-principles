@@ -14,9 +14,9 @@ The Decorator Design Pattern and the Proxy Design Pattern are both structural pa
    - The core component and the decorators share a common interface or base class.
    - Decorator classes have a reference to the component they decorate.
 
-3.Example:
+3. Example:
 
-    - Adding new features to a text editor (e.g., bold, italic, underline) without modifying the base text editor class.
+   - Adding new features to a text editor (e.g., bold, italic, underline) without modifying the base text editor class.
 
 4. Key Characteristics:
 

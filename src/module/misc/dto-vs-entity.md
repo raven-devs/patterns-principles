@@ -10,14 +10,11 @@ While the term "Data Transfer Object" (DTO) is defined quite unambiguously, the 
 
 The most relevant interpretations of the term "Entity", in my opinion, are the following three:
 
-In the context of entity-relationship- and ORM-frameworks - specifically Enterprise Java and Jpa:
-"An object that represents persistent data maintained in a database."
+- In the context of entity-relationship- and ORM-frameworks - specifically Enterprise Java and Jpa: "An object that represents persistent data maintained in a database."
 
-In the context of "Domain-Driven Design" (by Eric Evans):
-"An object defined primarily by its identity, rather than its attributes."
+- In the context of "Domain-Driven Design" (by Eric Evans): "An object defined primarily by its identity, rather than its attributes."
 
-In the context of "Clean Architecture" (by Robert C. Martin):
-"An object that encapsulates enterprise-wide critical business rules."
+- In the context of "Clean Architecture" (by Robert C. Martin): "An object that encapsulates enterprise-wide critical business rules."
 
 The Jee- and Jpa-community sees entities primarily as objects mapped to a database table. This point of view is very close to the definition of a DTO - and that's where much of the confusion probably stems from.
 

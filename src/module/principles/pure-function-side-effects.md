@@ -42,7 +42,7 @@ const addToCart = (cart, item, quantity) => {
 
 ## What are side effects?
 
-Side effects is something that makes our function impure by default. Any asynchronous processes or working with things outside of Javascript are side effects.Typical examples of side effects are:
+Side effects is something that makes our function impure by default. Any asynchronous processes or working with things outside of Javascript are side effects. Typical examples of side effects are:
 
 - Working with API
 - Working with Localstorage

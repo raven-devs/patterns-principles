@@ -15,6 +15,7 @@ Value objects have three main characteristics:
    Once created, a value object should always be equal. The only way to change its value is by full replacement. What this means, in code, is to create a new instance with the new value. When implementing a value object, we need to make sure that we remove all setters and that getters return immutable objects or copies to guarantee that nobody can change those values from the outside. In Java, we can use the final keyword.
 
 3. Self-Validation
+
    A value object must verify the validity of its attributes when being created. If any of its attributes are invalid, then the object should not be created and an error or exception should be raised. For instance, if we have a concept of Age it wouldn’t make sense to create an instance of age with a negative value. In Java, we can throw an IllegalArgumentException or any other custom Exception that we have created.
 
 Example of a value object

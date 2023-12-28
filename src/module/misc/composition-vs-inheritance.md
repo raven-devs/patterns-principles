@@ -34,6 +34,7 @@ dog.makeSound();
 ## Composition
 
 Composition is the design technique in object-oriented programming to implement "HAS-A" relationship between objects.
+Composition is preferred over inheritance.
 
 ```typescript
 // Component class
