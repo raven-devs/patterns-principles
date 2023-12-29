@@ -29,6 +29,7 @@ class Part implements Visitable {
     this.parts.forEach((part) => {
       part.accept(visitor);
     });
+
     visitor.visit(this);
   }
 }
