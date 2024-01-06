@@ -4,9 +4,9 @@ The Dependency Inversion Principle (DIP) states that high-level classes shouldnâ
 es. Both should depend on abstractions. Abstractions shouldnâ€™t depend on details. Details should depend on
 abstractions. Depend upon abstractions, not concretes.
 
-Low-level classes implement basic operations such as working with a disk, transferring data over a network, connecting to a database, etc.
-
 High-level classes contain complex business logic that directs low-level classes to do something.
+
+Low-level classes implement basic operations such as working with a disk, transferring data over a network, connecting to a database, etc.
 
 The dependency inversion principle is a design principle that states that high-level modules should depend on abstractions (interfaces / abstract classes) rather than concrete implementations (classes). This helps decouple the high-level and low-level modules, making it easier to change the low-level ones without affecting the high-level ones.
 

@@ -41,16 +41,7 @@ class EmailAddress {
   }
 
   equals(obj: object): boolean {
-    if (obj == null || getClass() != obj.getClass()) {
-      return false;
-    }
-
-    const that: EmailAddress = obj as EmailAddress;
-    return Objects.equals(this.value, that.value);
-  }
-
-  hashCode(): number {
-    return Objects.hash(value);
+    // logic
   }
 }
 ```

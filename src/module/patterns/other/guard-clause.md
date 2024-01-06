@@ -55,6 +55,7 @@ class Guard {
       throw new ArgumentNullException(argumentName);
     }
   }
+
   static AgainstInvalidTerms(term: Term, argumentName: string) {
     if (term != Term.Annually && term != Term.Monthly) {
       throw new InvalidEnumArgumentException(argumentName);
